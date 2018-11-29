@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View contact</title>
+</head>
+<body>
+<h1>Contact view page</h1>
+<div>
+    Name: <span th:text="${contact.name}">contact name</span>
+</div>
+<div>
+    Last Name: <span th:text="${contact.lastname}">contact last name</span>
+</div>
+<div>
+    Status: <span th:text="${contact.status}">status</span>
+</div>
+<div>
+    Description: <span th:text="${contact.description}">just a description</span>
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th>Type</th>
+        <th>Phone Number</th>
+        <th>Description</th>
+        <th>*</th>
+
+    </tr>
+    </thead>
+    <tbody>
+        <tr th:each="phone: ${phones}">
+            <td th:text="${phone.type}">Type</td>
+            <td>
+
+                +<span th:text="${phone.countrycode}">372</span><span th:text="${phone.phonenumber}">555 5555</span>
+
+            </td>
+            <td th:text="${phone.description}">Some description</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+<a type="button" th:href="@{/}">Home</a>
+</body>
+</html>

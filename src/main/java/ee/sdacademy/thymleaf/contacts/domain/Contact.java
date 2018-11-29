@@ -22,7 +22,7 @@ public class Contact {
     private Integer id;
     private String name;
     private String lastname;
-    private Date creationTime;
+    private Date creationtime;
     private ContactStatus status = ContactStatus.ACTIVE;
     private String description;
 
